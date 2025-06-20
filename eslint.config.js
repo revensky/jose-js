@@ -12,6 +12,7 @@ export default defineConfig([
   ...neostandard({
     ignores: [...resolveIgnoresFromGitignore(), 'eslint.config.mjs'],
     semi: true,
+    noStyle: true,
   }),
   tseslint.configs.recommended,
   {
@@ -31,8 +32,6 @@ export default defineConfig([
       'import-x/newline-after-import': 'error',
       'import-x/no-duplicates': 'error',
       'prettier/prettier': 'error',
-      '@stylistic/quotes': 'off',
-      '@stylistic/space-before-function-paren': 'off',
     },
   },
   {
