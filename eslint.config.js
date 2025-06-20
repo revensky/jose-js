@@ -4,7 +4,6 @@ import prettier from 'eslint-plugin-prettier';
 import simpleImportSort from 'eslint-plugin-simple-import-sort';
 import globals from 'globals';
 import neostandard, { resolveIgnoresFromGitignore } from 'neostandard';
-import tseslint from 'typescript-eslint';
 
 import js from '@eslint/js';
 
@@ -13,8 +12,9 @@ export default defineConfig([
     ignores: [...resolveIgnoresFromGitignore(), 'eslint.config.mjs'],
     semi: true,
     noStyle: true,
+    noJsx: true,
+    ts: true,
   }),
-  tseslint.configs.recommended,
   {
     files: ['**/*.js', '**/*.ts'],
     plugins: { js, prettier, 'simple-import-sort': simpleImportSort },
